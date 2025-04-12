@@ -1,6 +1,5 @@
 import { eachDayOfInterval } from 'date-fns';
 
-/////////////
 // GET
 
 export async function getCabin(id) {
