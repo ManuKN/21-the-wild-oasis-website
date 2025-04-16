@@ -57,7 +57,6 @@ export async function getGuest(email) {
     .select('*')
     .eq('email', email)
     .single();
-
   // No error here! We handle the possibility of no guest in the sign in callback
   return data;
 }
@@ -68,7 +67,6 @@ export async function getBooking(id) {
     .select('*')
     .eq('id', id)
     .single();
-
   if (error) {
     console.error(error);
     throw new Error('Booking could not get loaded');
