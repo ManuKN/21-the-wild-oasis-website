@@ -3,13 +3,14 @@ import CabinList from "../_components/CabinsList";
 import Spinner from "../_components/Spinner";
 import Loading from "./loading";
 import Filter from "../_components/Filter";
+import ReservationReminder from "../_components/ReservationReminder";
+import { useReservation } from "../_components/ReservationContext";
 
 export const metadata = {
   title: "Cabins",
 };
 
 export default async function Page({ searchParams }) {
-  console.log(searchParams)
   const filter = searchParams?.capacity ?? "all";
   return (
     <div>
@@ -29,6 +30,7 @@ export default async function Page({ searchParams }) {
       </div>
       <Suspense fallback={<Loading />}>
         <CabinList filter={filter} />
+        <ReservationReminder />
       </Suspense >
     </div>
   );
